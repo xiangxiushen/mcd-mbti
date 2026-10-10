@@ -149,12 +149,17 @@ mcd-mbti/
 │   ├── engine.js                   # 计分 + 本命套餐匹配 + 人格卡组装（纯函数）
 │   ├── render.js                   # 人格卡渲染（HTML→PNG，可降级 HTML）
 │   ├── template.html               # 人格卡模板
-│   ├── make-sample-png.js          # 零依赖生成示意图
+│   ├── make-sample-png.js          # 零依赖生成人格卡示意图
+│   ├── make-cp-chart.js            # 生成 16 型最搭 CP 关系图
 │   ├── sample-answers.json         # 示例答案
 │   ├── sample-mcp.json             # 示例 MCP 数据
 │   ├── test.js / package.json
-└── docs/
-    └── sample-card.png             # 人格卡示意图
+├── docs/
+│   ├── sample-card.png             # 人格卡示意图
+│   ├── cp-chart.svg / cp-chart.png # 最搭 CP 关系图
+├── workbuddy.md                    # WorkBuddy 专项（可选）
+├── NOTICE.md                       # 声明与免责
+└── LICENSE
 ```
 
 ## 🔒 隐私与安全
@@ -165,7 +170,7 @@ mcd-mbti/
 
 ## 📄 License
 
-MIT License，仅供个人非商业用途，使用麦当劳 MCP 须遵守其官方服务规则。
+[MIT License](./LICENSE)，仅供个人非商业用途。相关声明与免责见 [`NOTICE.md`](./NOTICE.md)。
 
 ---
 
