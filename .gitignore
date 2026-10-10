@@ -1,0 +1,18 @@
+node_modules/
+*.log
+.DS_Store
+src/preview.html
+src/preview.png
+src/.test-card.html
+mcd-mbti-card.*
+# 忽略运行时生成的卡片，但保留 docs 下的示意图与关系图
+/*.png
+src/*.png
+!docs/sample-card.png
+!docs/cp-chart.png
+!docs/cp-chart.svg
+# 绝不提交真实 Token 或个人数据
+mcp-config.json
+*.secret
+answers.json
+mcp.json

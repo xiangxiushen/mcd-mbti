@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1.0" />
+<title>麦门人格鉴定卡</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --mcd-red:#DA291C; --mcd-yellow:#FFC72C; --ink:#1a1a1a; --cream:#FFF8E7; }
+  html, body { width:1080px; height:1350px;
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif; overflow:hidden; }
+  .card { width:1080px; height:1350px; position:relative; padding:64px 60px;
+    background:linear-gradient(160deg,#FFD95A 0%,var(--mcd-yellow) 28%,var(--mcd-red) 85%,#B01E13 100%);
+    display:flex; flex-direction:column; color:var(--ink); }
+  .kicker { text-align:center; color:#fff; font-size:30px; letter-spacing:6px; opacity:.95; }
+  .arch { text-align:center; font-size:84px; font-weight:900; color:var(--mcd-yellow);
+    text-shadow:0 5px 0 #B01E13,0 8px 18px rgba(0,0,0,.25); line-height:1; margin-top:4px; }
+
+  .hero { margin:30px 0 24px; background:var(--ink); color:#fff; border-radius:36px;
+    padding:48px 44px; text-align:center; border:4px solid var(--mcd-yellow);
+    box-shadow:0 18px 44px rgba(0,0,0,.3); }
+  .code { font-size:40px; font-weight:900; letter-spacing:10px; color:var(--mcd-yellow); }
+  .title { font-size:72px; font-weight:900; margin:14px 0 8px; }
+  .slogan { font-size:34px; opacity:.92; font-style:italic; }
+  .rarity { margin-top:18px; display:inline-block; background:var(--mcd-red); color:#fff;
+    font-size:24px; padding:8px 22px; border-radius:999px; }
+
+  .desc { background:var(--cream); border-radius:24px; padding:30px 34px; font-size:30px;
+    line-height:1.6; color:#333; box-shadow:0 8px 20px rgba(0,0,0,.15); }
+
+  .traits { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin:24px 0; }
+  .traits span { background:rgba(26,26,26,.85); color:var(--mcd-yellow); font-size:26px;
+    font-weight:700; padding:10px 22px; border-radius:999px; }
+
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .box { background:var(--cream); border-radius:24px; padding:26px 28px; box-shadow:0 8px 20px rgba(0,0,0,.15); }
+  .box.wide { grid-column:1 / -1; }
+  .box .h { font-size:26px; font-weight:800; color:#8a6d1f; margin-bottom:12px; }
+  .box .line { font-size:28px; font-weight:700; color:var(--ink); margin:6px 0; }
+  .box .line .p { color:var(--mcd-red); margin-left:10px; font-size:24px; }
+  .box .muted { font-size:24px; color:#777; }
+
+  .match { background:rgba(0,0,0,.26); color:#fff; border-radius:20px; padding:18px 24px;
+    font-size:26px; text-align:center; margin-top:auto; }
+  .foot { text-align:center; color:#fff; font-size:22px; opacity:.9; margin-top:16px; }
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="kicker">麦门人格鉴定 · M-BTI</div>
+    <div class="arch">M</div>
+
+    <div class="hero">
+      <div class="code" id="code">ENFP</div>
+      <div class="title" id="title">🍟 薯条守护神</div>
+      <div class="slogan" id="slogan">薯条配快乐，人生才完整！</div>
+      <div class="rarity" id="rarity"></div>
+    </div>
+
+    <div class="desc" id="desc"></div>
+
+    <div class="traits" id="traits"></div>
+
+    <div class="row">
+      <div class="box wide">
+        <div class="h">🍔 你的本命套餐处方</div>
+        <div id="combo"></div>
+      </div>
+      <div class="box">
+        <div class="h">📅 适合你的当月活动</div>
+        <div id="campaigns"></div>
+      </div>
+      <div class="box">
+        <div class="h">🎫 顺手领的券</div>
+        <div id="coupons"></div>
+      </div>
+    </div>
+
+    <div class="match" id="match"></div>
+    <div class="foot">由 mcd-mbti 基于麦当劳 MCP 实时生成 · 测测你是哪一型</div>
+  </div>
+
+  <script>
+    function render(d) {
+      if (!d) return;
+      const $ = (id) => document.getElementById(id);
+      const setList = (id, arr, fmt) => {
+        const el = $(id); el.innerHTML = '';
+        if (!arr || arr.length === 0) { el.innerHTML = '<div class="muted">暂无</div>'; return; }
+        arr.forEach((x) => { const div = document.createElement('div'); div.className='line'; div.innerHTML = fmt(x); el.appendChild(div); });
+      };
+
+      $('code').textContent = d.code || '';
+      $('title').textContent = d.title || '';
+      $('slogan').textContent = '「' + (d.slogan || '') + '」';
+      $('rarity').textContent = d.rarity || '';
+      $('desc').textContent = d.desc || '';
+
+      const tb = $('traits'); tb.innerHTML = '';
+      (d.traits || []).forEach((t) => { const s=document.createElement('span'); s.textContent='#'+t; tb.appendChild(s); });
+
+      // 本命套餐
+      const combo = (d.combo && d.combo.items) || [];
+      if (combo.length) {
+        setList('combo', combo, (it) => `${it.name}${it.price ? `<span class="p">¥${it.price}</span>` : ''}`);
+      } else {
+        $('combo').innerHTML = `<div class="muted">${(d.combo && d.combo.note) || ''}</div>`;
+      }
+
+      setList('campaigns', d.campaigns, (c) => c);
+      setList('coupons', d.coupons, (c) => c);
+
+      $('match').textContent = d.matchHint ? ('💞 ' + d.matchHint) : '';
+    }
+    if (window.__MCD_CARD__) render(window.__MCD_CARD__);
+  </script>
+</body>
+</html>

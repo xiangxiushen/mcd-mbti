@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif">
+<defs><radialGradient id="bg" cx="50%" cy="0%" r="120%">
+    <stop offset="0%" stop-color="#FFD95A"/><stop offset="30%" stop-color="#FFC72C"/>
+    <stop offset="78%" stop-color="#DA291C"/><stop offset="100%" stop-color="#B01E13"/>
+  </radialGradient></defs>
+<rect width="1200" height="1200" fill="url(#bg)"/>
+<text x="600" y="78" text-anchor="middle" font-size="48" font-weight="900" fill="#fff">麦门十六型人格 · 最搭 CP 图</text>
+<text x="600" y="118" text-anchor="middle" font-size="24" fill="#fff" opacity="0.9">M-BTI · 看看你和谁最配一起吃麦当劳</text>
+<rect x="90" y="190" width="460" height="340" rx="28" fill="#6D28D9" opacity="0.14"/>
+<text x="320" y="178" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">分析家族 · NT</text>
+<rect x="650" y="190" width="460" height="340" rx="28" fill="#059669" opacity="0.14"/>
+<text x="880" y="178" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">外交家族 · NF</text>
+<rect x="90" y="650" width="460" height="340" rx="28" fill="#2563EB" opacity="0.14"/>
+<text x="320" y="638" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">守护家族 · SJ</text>
+<rect x="650" y="650" width="460" height="340" rx="28" fill="#DB2777" opacity="0.14"/>
+<text x="880" y="638" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">探险家族 · SP</text>
+<line x1="170" y1="270" x2="1030" y2="450" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(462.40000000000003,331.2)">
+      <rect x="-30" y="-15" width="60" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">互补</text>
+    </g>
+<line x1="470" y1="270" x2="470" y2="910" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(470,487.6)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">灵魂搭子</text>
+    </g>
+<line x1="170" y1="450" x2="1030" y2="450" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(462.40000000000003,450)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">黄金搭档</text>
+    </g>
+<line x1="470" y1="450" x2="170" y2="270" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(368,388.8)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">火花组合</text>
+    </g>
+<line x1="730" y1="270" x2="1030" y2="910" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(832,487.6)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">互相治愈</text>
+    </g>
+<line x1="1030" y1="270" x2="170" y2="450" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(737.5999999999999,331.2)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">奇妙组合</text>
+    </g>
+<line x1="730" y1="450" x2="470" y2="270" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(641.6,388.8)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">互相成就</text>
+    </g>
+<line x1="170" y1="730" x2="1030" y2="910" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(462.40000000000003,791.2)">
+      <rect x="-39" y="-15" width="78" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">反差萌</text>
+    </g>
+<line x1="470" y1="730" x2="470" y2="450" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(470,634.8)">
+      <rect x="-30" y="-15" width="60" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">互补</text>
+    </g>
+<line x1="170" y1="910" x2="1030" y2="270" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(462.40000000000003,692.4)">
+      <rect x="-57" y="-15" width="114" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">互补 CP</text>
+    </g>
+<line x1="730" y1="730" x2="470" y2="910" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(641.6,791.2)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">反差有趣</text>
+    </g>
+<line x1="1030" y1="730" x2="170" y2="910" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(737.5999999999999,791.2)">
+      <rect x="-30" y="-15" width="60" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">互补</text>
+    </g>
+<line x1="730" y1="910" x2="730" y2="270" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>
+<g transform="translate(730,692.4)">
+      <rect x="-48" y="-15" width="96" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
+      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">奇妙反差</text>
+    </g>
+<g transform="translate(170,270)">
+      <circle r="46" fill="#fff" stroke="#6D28D9" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🥤</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#6D28D9">INTJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">续杯战略家</text>
+    </g>
+<g transform="translate(470,270)">
+      <circle r="46" fill="#fff" stroke="#6D28D9" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🍔</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#6D28D9">INTP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">配方研究员</text>
+    </g>
+<g transform="translate(170,450)">
+      <circle r="46" fill="#fff" stroke="#6D28D9" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">👑</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#6D28D9">ENTJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">团餐指挥官</text>
+    </g>
+<g transform="translate(470,450)">
+      <circle r="46" fill="#fff" stroke="#6D28D9" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🌶️</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#6D28D9">ENTP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">菜单辩论家</text>
+    </g>
+<g transform="translate(730,270)">
+      <circle r="46" fill="#fff" stroke="#059669" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🌙</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#059669">INFJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">深夜治愈师</text>
+    </g>
+<g transform="translate(1030,270)">
+      <circle r="46" fill="#fff" stroke="#059669" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🍰</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#059669">INFP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">甜品梦想家</text>
+    </g>
+<g transform="translate(730,450)">
+      <circle r="46" fill="#fff" stroke="#059669" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🤝</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#059669">ENFJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">请客担当</text>
+    </g>
+<g transform="translate(1030,450)">
+      <circle r="46" fill="#fff" stroke="#059669" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🍟</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#059669">ENFP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">薯条守护神</text>
+    </g>
+<g transform="translate(170,730)">
+      <circle r="46" fill="#fff" stroke="#2563EB" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🍔</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#2563EB">ISTJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a1a">巨无霸原教旨</text>
+    </g>
+<g transform="translate(470,730)">
+      <circle r="46" fill="#fff" stroke="#2563EB" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🧸</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#2563EB">ISFJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">温柔续杯者</text>
+    </g>
+<g transform="translate(170,910)">
+      <circle r="46" fill="#fff" stroke="#2563EB" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">📋</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#2563EB">ESTJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">效率点餐官</text>
+    </g>
+<g transform="translate(470,910)">
+      <circle r="46" fill="#fff" stroke="#2563EB" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🧋</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#2563EB">ESFJ</text>
+      <text x="0" y="72" text-anchor="middle" font-size="17" font-weight="700" fill="#1a1a1a">氛围感制造机</text>
+    </g>
+<g transform="translate(730,730)">
+      <circle r="46" fill="#fff" stroke="#DB2777" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🚗</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#DB2777">ISTP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">得来速车神</text>
+    </g>
+<g transform="translate(1030,730)">
+      <circle r="46" fill="#fff" stroke="#DB2777" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🎨</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#DB2777">ISFP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">颜值收藏家</text>
+    </g>
+<g transform="translate(730,910)">
+      <circle r="46" fill="#fff" stroke="#DB2777" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🔥</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#DB2777">ESTP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">限定收割机</text>
+    </g>
+<g transform="translate(1030,910)">
+      <circle r="46" fill="#fff" stroke="#DB2777" stroke-width="4"/>
+      <text x="0" y="-6" text-anchor="middle" font-size="34">🎉</text>
+      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="#DB2777">ESFP</text>
+      <text x="0" y="72" text-anchor="middle" font-size="20" font-weight="700" fill="#1a1a1a">气氛组组长</text>
+    </g>
+<text x="600" y="1172" text-anchor="middle" font-size="20" fill="#fff" opacity="0.9">由 mcd-mbti 基于麦当劳 MCP 生成 · 测测你是哪一型</text>
+</svg>

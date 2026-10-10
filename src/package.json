@@ -1,0 +1,18 @@
+{
+  "name": "mcd-mbti",
+  "version": "1.0.0",
+  "description": "麦门人格鉴定器：用麦当劳语境测出你的「麦门十六型人格」，并基于麦当劳 MCP 实时生成本命套餐处方与人格卡",
+  "main": "render.js",
+  "type": "commonjs",
+  "bin": { "mcd-mbti": "render.js" },
+  "scripts": {
+    "preview": "node render.js --answers ./sample-answers.json --mcp ./sample-mcp.json --out ./preview.png",
+    "preview:html": "node render.js --answers ./sample-answers.json --mcp ./sample-mcp.json --html ./preview.html",
+    "sample:png": "node make-sample-png.js",
+    "chart": "node make-cp-chart.js",
+    "test": "node test.js"
+  },
+  "keywords": ["mcdonalds", "mcp", "mbti", "personality", "quiz", "persona-card"],
+  "license": "MIT",
+  "optionalDependencies": { "puppeteer": "^23.0.0" }
+}
