@@ -16,7 +16,7 @@ const path = require('path');
 const zlib = require('zlib');
 const { PERSONAS } = require('./personas');
 
-const W = 1200, H = 1200;
+const W = 1200, H = 1560;
 
 // 四大家族分组（NT 分析 / NF 外交 / SJ 守护 / SP 探险）
 const FAMILIES = [
@@ -74,7 +74,8 @@ function buildSvg() {
     parts.push(`<text x="${q.cx}" y="${q.cy - 182}" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">${fam.name}</text>`);
   });
 
-  // CP 连线（去重：同一对只画一次）
+  // CP 连线（去重：同一对只画一次）—— 只画线，不在线上放标签（标签统一进底部图例，彻底避免压字）
+  const pairs = [];
   const drawn = new Set();
   Object.keys(PERSONAS).forEach((code) => {
     const m = PERSONAS[code].match;
@@ -82,36 +83,47 @@ function buildSvg() {
     const key = [code, m.code].sort().join('-');
     if (drawn.has(key)) return;
     drawn.add(key);
+    pairs.push({ a: code, b: m.code, relation: m.relation });
     const a = POS[code], b = POS[m.code];
-    parts.push(`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#fff" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.7"/>`);
-    // 关系标签贴在靠近起点 1/3 处，避免多条线在中点叠标签
-    const lx = a.x + (b.x - a.x) * 0.34, ly = a.y + (b.y - a.y) * 0.34;
-    const w = Math.max(60, m.relation.length * 18 + 24);
-    parts.push(`<g transform="translate(${lx},${ly})">
-      <rect x="${-w / 2}" y="-15" width="${w}" height="30" rx="15" fill="#1a1a1a" opacity="0.92"/>
-      <text x="0" y="6" text-anchor="middle" font-size="17" font-weight="700" fill="#FFC72C">${esc(m.relation)}</text>
-    </g>`);
+    parts.push(`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#fff" stroke-width="2" stroke-dasharray="6 7" opacity="0.55"/>`);
   });
 
-  // 人格节点
+  // 人格节点（名称放在圆圈内下方，不与连线所在区域冲突）
   Object.keys(PERSONAS).forEach((code) => {
     const p = PERSONAS[code];
     const pos = POS[code];
     if (!pos) return;
     const emoji = (p.title.match(/^\S+/) || [''])[0];
     let name = p.title.replace(/^\S+\s*/, '');
-    // 过长名称缩短，避免溢出节点
     if (name.length > 6) name = name.slice(0, 6);
-    const nameSize = name.length >= 6 ? 17 : 20;
+    const nameSize = name.length >= 6 ? 18 : 21;
+    // 名称底板：白色圆角条，盖住穿过的虚线，保证可读
+    const nameW = name.length * nameSize + 16;
     parts.push(`<g transform="translate(${pos.x},${pos.y})">
-      <circle r="46" fill="#fff" stroke="${pos.color}" stroke-width="4"/>
-      <text x="0" y="-6" text-anchor="middle" font-size="34">${esc(emoji)}</text>
-      <text x="0" y="24" text-anchor="middle" font-size="18" font-weight="800" fill="${pos.color}">${esc(code)}</text>
-      <text x="0" y="72" text-anchor="middle" font-size="${nameSize}" font-weight="700" fill="#1a1a1a">${esc(name)}</text>
+      <circle r="48" fill="#fff" stroke="${pos.color}" stroke-width="4"/>
+      <text x="0" y="-4" text-anchor="middle" font-size="36">${esc(emoji)}</text>
+      <text x="0" y="26" text-anchor="middle" font-size="18" font-weight="800" fill="${pos.color}">${esc(code)}</text>
+      <rect x="${-nameW / 2}" y="60" width="${nameW}" height="30" rx="15" fill="#fff" opacity="0.96"/>
+      <text x="0" y="81" text-anchor="middle" font-size="${nameSize}" font-weight="700" fill="#1a1a1a">${esc(name)}</text>
     </g>`);
   });
 
-  parts.push(`<text x="${W/2}" y="${H-28}" text-anchor="middle" font-size="20" fill="#fff" opacity="0.9">由 mcd-mbti 基于麦当劳 MCP 生成 · 测测你是哪一型</text>`);
+  // 底部图例：列出全部 CP 配对与关系（两列排布）
+  const legendTop = 1120;
+  parts.push(`<text x="${W/2}" y="${legendTop}" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">最 搭 C P 一 览</text>`);
+  const emojiOf = (c) => (PERSONAS[c].title.match(/^\S+/) || [''])[0];
+  const col = [60, W / 2 + 20];
+  pairs.forEach((p, i) => {
+    const x = col[i % 2];
+    const y = legendTop + 46 + Math.floor(i / 2) * 54;
+    parts.push(`<g transform="translate(${x},${y})">
+      <rect x="0" y="-30" width="520" height="44" rx="22" fill="#1a1a1a" opacity="0.82"/>
+      <text x="22" y="0" font-size="22" font-weight="700" fill="#fff">${esc(emojiOf(p.a))} ${esc(p.a)}  ×  ${esc(emojiOf(p.b))} ${esc(p.b)}</text>
+      <text x="500" y="0" text-anchor="end" font-size="22" font-weight="800" fill="#FFC72C">${esc(p.relation)}</text>
+    </g>`);
+  });
+
+  parts.push(`<text x="${W/2}" y="${H-24}" text-anchor="middle" font-size="20" fill="#fff" opacity="0.9">由 mcd-mbti 基于麦当劳 MCP 生成 · 测测你是哪一型</text>`);
   parts.push(`</svg>`);
   return parts.join('\n');
 }
@@ -183,27 +195,37 @@ function buildPng() {
 
   // CP 连线
   const drawn = new Set();
+  const pairCount = { n: 0 };
   Object.keys(PERSONAS).forEach((code) => {
     const m = PERSONAS[code].match; if (!m || !POS[m.code]) return;
     const key = [code, m.code].sort().join('-'); if (drawn.has(key)) return; drawn.add(key);
+    pairCount.n++;
     const a = POS[code], b = POS[m.code];
-    dline(a.x, a.y, b.x, b.y, [255, 255, 255], 180);
-    const lx = a.x + (b.x - a.x) * 0.34, ly = a.y + (b.y - a.y) * 0.34;
-    fillRect(lx - 42, ly - 15, 84, 30, [26, 26, 26], 235, 15);
-    fillRect(lx - 30, ly - 5, 60, 10, [255, 199, 44]); // 关系文字示意
+    dline(a.x, a.y, b.x, b.y, [255, 255, 255], 150); // 只画线，不放标签
   });
 
-  // 节点
+  // 节点（名称底板盖线，保证可读）
   Object.keys(PERSONAS).forEach((code) => {
     const pos = POS[code]; if (!pos) return; const c = hex(pos.color);
-    disc(pos.x, pos.y, 46, [255, 255, 255]);
-    ring(pos.x, pos.y, 46, 4, c);
-    disc(pos.x, pos.y - 8, 14, c, 180);          // emoji 位置示意
-    fillRect(pos.x - 24, pos.y + 14, 48, 12, c); // code 示意
-    fillRect(pos.x - 46, pos.y + 56, 92, 14, [26, 26, 26]); // 名称示意
+    disc(pos.x, pos.y, 48, [255, 255, 255]);
+    ring(pos.x, pos.y, 48, 4, c);
+    disc(pos.x, pos.y - 6, 15, c, 180);                      // emoji 位置示意
+    fillRect(pos.x - 24, pos.y + 16, 48, 12, c);             // code 示意
+    fillRect(pos.x - 52, pos.y + 60, 104, 30, [255, 255, 255], 245, 15); // 名称白底板
+    fillRect(pos.x - 42, pos.y + 69, 84, 12, [26, 26, 26]);  // 名称文字示意
   });
 
-  fillRect(W / 2 - 200, H - 40, 400, 12, [255, 255, 255], 200, 6);
+  // 底部图例区示意（13 条 CP，两列）
+  const legendTop = 1120;
+  fillRect(W / 2 - 110, legendTop - 20, 220, 20, [255, 255, 255], 235, 6);
+  for (let i = 0; i < pairCount.n; i++) {
+    const x = (i % 2) ? W / 2 + 20 : 60;
+    const y = legendTop + 20 + Math.floor(i / 2) * 54;
+    fillRect(x, y, 520, 44, [26, 26, 26], 205, 22);
+    fillRect(x + 22, y + 14, 230, 16, [255, 255, 255]);      // 左侧配对示意
+    fillRect(x + 400, y + 14, 100, 16, [255, 199, 44]);      // 右侧关系示意
+  }
+  fillRect(W / 2 - 200, H - 36, 400, 12, [255, 255, 255], 200, 6);
   return png(W, H, buf);
 }
 
